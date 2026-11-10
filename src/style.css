@@ -238,14 +238,16 @@ body:has(.cinematic-hero:not(.intro-complete)) .section-rail { visibility: hidde
 .header-identity { --identity-gap: 10px; display: flex; align-items: baseline; gap: var(--identity-gap); white-space: nowrap; }
 .header-identity a { display: inline-flex; align-items: center; font-size: 17px; font-weight: 600; }
 .header-identity span { font-size: 14px; }
-.header-resume {
+.header-actions { display:flex; align-items:center; gap:clamp(4px, 1vw, 12px); }
+:is(.header-resume, .header-linkedin) {
   display: inline-flex; flex-shrink: 0; align-items: center; justify-content: center; gap: 8px;
   min-width: 44px; padding-inline: 14px; border: 1px solid #79efff38; border-radius: 24px;
   color: var(--ink); background: #101b30; font-size: 13px; font-weight: 600;
   transition: background .2s ease, border-color .2s ease, color .2s ease;
 }
-.header-resume svg { color: var(--orb-cyan); }
-.header-resume:is(:hover, :focus-visible) { color: var(--orb-cyan); background: #16253d; border-color: #79efff80; }
+.header-linkedin { padding-inline:0; }
+:is(.header-resume, .header-linkedin) svg { color: var(--orb-cyan); }
+:is(.header-resume, .header-linkedin):is(:hover, :focus-visible) { color: var(--orb-cyan); background: #16253d; border-color: #79efff80; }
 @media (max-width:700px) {
   .identity-header {
     top: calc(16px + env(safe-area-inset-top)); gap: 6px;
@@ -262,6 +264,10 @@ body:has(.cinematic-hero:not(.intro-complete)) .section-rail { visibility: hidde
   .header-resume { padding-inline: 0; }
   .header-resume span { display: none; }
   .identity-header .header-identity span::before { display: none; }
+}
+@media (max-width:380px) {
+  .header-identity { flex-direction:column; gap:2px; }
+  .header-identity a { min-height:0; }
 }
 
 /* Recruiter-facing hierarchy: identity and evidence stay legible beside the scene. */

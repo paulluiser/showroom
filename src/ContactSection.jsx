@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { Check, Copy, Download } from 'lucide-react';
+import { LINKEDIN_URL } from './content';
 import OrbStage from './OrbStage';
 import './contact.css';
 
@@ -57,6 +58,7 @@ export default function ContactSection({ motion, signals, reduced, enabled }) {
           <span className="ai-heading-feature ai-heading-emphasis">paulluiser@gmail.com</span>
         </a>
         <div className="contact-actions">
+          <a className="text-link" href={LINKEDIN_URL}>LinkedIn</a>
           <button className="text-link" type="button" onClick={copy}>{copied ? 'Copied' : 'Copy email'}{copied ? <Check size={15}/> : <Copy size={15}/>}</button>
           <a className="text-link" href="/Paul-Luiser-Vasquez-Resume.pdf" download>Download résumé <Download size={15}/></a>
         </div>

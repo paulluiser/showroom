@@ -1,3 +1,5 @@
+export const LINKEDIN_URL = 'https://www.linkedin.com/in/paul-luiser-vasquez/';
+
 const guides = {
   home: {
     label: "Welcome to the showroom",

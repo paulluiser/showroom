@@ -30,8 +30,9 @@ html[data-theme="light"] {
   background-size: cover;
 }
 :where(html[data-theme="light"]) .header-identity span, :where(html[data-theme="light"]) .hero-identity, :where(html[data-theme="light"]) .hero-identity span, :where(html[data-theme="light"]) .hero-identity strong, :where(html[data-theme="light"]) .hero-methodologies, :where(html[data-theme="light"]) .hero-role, :where(html[data-theme="light"]) .hero-name { color: var(--ink); }
-:where(html[data-theme="light"]) .header-resume { background: #ffffffd9; color: var(--ink); border-color: var(--line); }
-:where(html[data-theme="light"]) .header-resume:is(:hover,:focus-visible) { color: #075d77; background: #e9f4f8; border-color: #6f9eac; }
+:where(html[data-theme="light"]) :is(.header-resume, .header-linkedin) { background: #ffffffd9; color: var(--ink); border-color: var(--line); }
+:where(html[data-theme="light"]) .header-linkedin svg { color: #075d77; }
+:where(html[data-theme="light"]) :is(.header-resume, .header-linkedin):is(:hover,:focus-visible) { color: #075d77; background: #e9f4f8; border-color: #6f9eac; }
 :where(html[data-theme="light"]) .hero-scroll-cue { color: var(--muted); background: #f7f8fcd9; }
 :where(html[data-theme="light"]) .hero-title .hero-sweep { color: var(--ink); }
 :where(html[data-theme="light"]) .perspective-stage p, :where(html[data-theme="light"]) .perspective-copy p, :where(html[data-theme="light"]) .team-caption { color: var(--reading-ink); }

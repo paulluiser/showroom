@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
-import { Download } from 'lucide-react';
+import { Download, Linkedin } from 'lucide-react';
+import { LINKEDIN_URL } from './content';
 import { projectArrivalFrame, projectViewportPosition } from './projectArrival';
 import { continuityFrame, advanceChapterTransfer } from './continuityMotion';
 import { advanceContact, contactFrame } from './contactMotion';
@@ -380,9 +381,14 @@ export default function Hero({paused,workflow=0,workflowClock,workflowArrival,pr
           <a href="#home">Paul Luiser Vasquez</a>{' '}
           <span>IT Project Manager</span>
         </div>
-        <a className="header-resume" href="/Paul-Luiser-Vasquez-Resume.pdf" download aria-label="Download résumé (PDF)" title="Download résumé">
-          <span>Résumé</span><Download size={16} aria-hidden="true"/>
-        </a>
+        <div className="header-actions">
+          <a className="header-linkedin" href={LINKEDIN_URL} aria-label="LinkedIn profile" title="LinkedIn profile">
+            <Linkedin size={16} aria-hidden="true"/>
+          </a>
+          <a className="header-resume" href="/Paul-Luiser-Vasquez-Resume.pdf" download aria-label="Download résumé (PDF)" title="Download résumé">
+            <span>Résumé</span><Download size={16} aria-hidden="true"/>
+          </a>
+        </div>
       </header>
     </>,document.body)}
     <div className="hero-pin">
