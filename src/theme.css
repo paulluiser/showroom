@@ -1,0 +1,34 @@
+/* The physical orb keeps its original material in both page themes. */
+body { overflow-x: clip; }
+.theme-toggle {
+  position: fixed;
+  z-index: 55;
+  top: calc(26px + env(safe-area-inset-top));
+  right: max(3%, calc(12px + env(safe-area-inset-right)));
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  color: var(--ink);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  box-shadow: 0 4px 16px #080d1b12;
+  transition: background-color 180ms ease, border-color 180ms ease;
+}
+.theme-toggle:hover { border-color: var(--orb-violet); }
+.theme-toggle:focus-visible { outline: 2px solid var(--orb-violet); outline-offset: 4px; }
+html:not([data-theme="light"]) .section,
+html:not([data-theme="light"]) footer {
+  background-color: var(--surface);
+}
+html:not([data-theme="light"]) .cinematic-hero::before {
+  background-image: radial-gradient(ellipse at 65% 30%,#25215455,transparent 55%);
+  background-size: cover;
+  background-color: var(--ground);
+}
+@media(max-width:700px) {
+  .theme-toggle { top: auto; bottom: calc(88px + env(safe-area-inset-bottom)); right: max(14px,env(safe-area-inset-right)); }
+}
+@media(prefers-reduced-motion:reduce) { .theme-toggle { transition: none; } }

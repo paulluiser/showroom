@@ -1,0 +1,38 @@
+html[data-project-page="false"] {
+  scroll-snap-type:y proximity;
+  scroll-padding:0;
+}
+
+.showroom-home #main > section {
+  scroll-snap-align:start;
+  scroll-snap-stop:normal;
+  scroll-margin-top:0;
+}
+
+.showroom-home #main > .section {
+  min-height:100dvh;
+  padding-block-start:max(var(--header-zone, 96px), 96px);
+}
+
+.showroom-home #main > :is(.intelligence, .logistics-project) {
+  display:grid;
+  align-content:center;
+  padding-block:var(--header-zone, 96px);
+}
+
+@media (max-width:700px) {
+  .showroom-home #main > .section {
+    padding-block-end:max(76px, calc(68px + env(safe-area-inset-bottom)));
+  }
+  .showroom-home #main > :is(.intelligence, .logistics-project) {
+    padding-block-start:calc(var(--header-zone, 80px) + 10px);
+  }
+}
+
+.showroom-home #main > .contact {
+  display:flex; flex-direction:column; justify-content:center;
+  padding-block:var(--header-zone, 96px);
+}
+@media (max-width:700px) {
+  .showroom-home #main > .contact { padding-bottom:max(92px, calc(78px + env(safe-area-inset-bottom))); }
+}

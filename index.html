@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#080d1b" />
+    <meta
+      name="description"
+      content="Paul Luiser Vasquez — IT Project Manager combining clear requirements, coordinated software delivery, and practical AI workflows. Explore selected projects and get in touch."
+    />
+    <meta property="og:title" content="Paul Luiser Vasquez | The Showroom" />
+    <meta
+      property="og:description"
+      content="Human-led delivery. AI-extended possibilities. An IT Project Manager's selected work."
+    />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>Paul Luiser Vasquez — The Showroom</title>
+    <script>
+      // Apply the saved choice before paint; first-time visits always start dark.
+      let showroomTheme = 'dark';
+      try { if (localStorage.getItem('showroom-theme') === 'light') showroomTheme = 'light'; } catch {}
+      document.documentElement.dataset.theme = showroomTheme;
+      document.querySelector('meta[name="theme-color"]').content = showroomTheme === 'light' ? '#f7f8fc' : '#080d1b';
+
+      if (performance.getEntriesByType('navigation')[0]?.type === 'reload') {
+        const previousRestoration = history.scrollRestoration;
+        history.scrollRestoration = 'manual';
+        if (location.hash) {
+          history.replaceState(history.state, '', location.pathname + location.search);
+        }
+        window.addEventListener('pageshow', () => {
+          window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+          requestAnimationFrame(() => { history.scrollRestoration = previousRestoration; });
+        }, { once: true });
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

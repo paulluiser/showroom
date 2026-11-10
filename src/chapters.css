@@ -1,0 +1,161 @@
+/* One continuous material, four distinct compositions. */
+:root {
+  --orb-cyan: #79efff;
+  --orb-violet: #b39bff;
+  --orb-pink: #f579cf;
+  --reading-ink: #c3cde0;
+  --chapter-ease: cubic-bezier(.16, 1, .3, 1);
+}
+[hidden] { display: none !important; }
+.intelligence, .work, .experience, .contact { border-top: 0; }
+.intelligence { padding-bottom: clamp(88px, 9vw, 144px); }
+.work { background: linear-gradient(#0c1325, #090e1d); }
+.experience { background: linear-gradient(#090e1d, #0b1021); }
+.contact { background: #0b1021; }
+.chapter-layout {
+  display: grid; grid-template-columns: minmax(0, .78fr) minmax(0, 1.22fr);
+  gap: clamp(40px, 6vw, 96px); align-items: start;
+}
+.chapter-art { min-width: 0; position: sticky; top: calc(var(--header-zone, 96px) + 32px); text-align: center; }
+.chapter-orb-slot { position: relative; height: clamp(280px, 30vw, 420px); isolation: isolate; }
+.orb-ground {
+  position: absolute; inset: 10% -15%; pointer-events: none;
+  background: radial-gradient(ellipse, #526be52a, #5942a311 40%, transparent 70%);
+}
+@media (max-width:700px) { .orb-ground { inset-inline: -6%; } }
+.orb-trace { position: absolute; inset: 16% 6%; border: 1px solid #839adb24; border-radius: 50%; transform: rotate(-18deg) scaleY(.65); }
+.orb-trace--b { inset: 9% 12%; transform: rotate(23deg) scaleY(.8); opacity: .45; }
+.chapter-art--experience .orb-trace--a { inset: 8% 18%; transform: rotate(25deg); }
+.chapter-art--experience .orb-trace--b { inset: 17% 9%; transform: rotate(-28deg); }
+.orb-caption { position: relative; z-index: 13; font-size: clamp(17px, 1.5vw, 21px); color: #d6deee; line-height: 1.55; max-width: 25ch; margin: 8px auto 0; text-wrap: balance; }
+.work-showcase {
+  --project-accent: var(--orb-cyan);
+  display: grid;
+  grid-template-columns: minmax(0, 1.22fr) minmax(0, .78fr);
+  grid-template-areas: "feature lens" "index lens";
+  align-items: start;
+  column-gap: clamp(32px, 6vw, 96px);
+  row-gap: clamp(42px, 5.5vw, 76px);
+}
+.work-showcase[data-project="hris"] { --project-accent: #88f5cd; }
+.work-showcase[data-project="streaming"] { --project-accent: var(--orb-pink); }
+.work-showcase[data-project="operations"] { --project-accent: var(--orb-violet); }
+.work-showcase .chapter-art--work { grid-area: lens; }
+.work-showcase .chapter-orb-slot { height: clamp(220px, 28vw, 370px); }
+.chapter-art--work .orb-trace { border-color: color-mix(in srgb, var(--project-accent) 24%, transparent); }
+.project-lens-caption { position: relative; z-index: 13; animation: chapter-copy 450ms var(--chapter-ease); }
+.project-lens-caption p { color: var(--project-accent); font-size: 14px; font-weight: 600; }
+.project-lens-focus {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 4px 14px;
+  margin: 8px 0 0;
+  padding: 0;
+  list-style: none;
+  color: var(--muted);
+  font-size: 12px;
+}
+.project-lens-focus li + li::before { content: ""; display: inline-block; width: 3px; height: 3px; margin: 0 9px 2px 0; border-radius: 50%; background: var(--project-accent); }
+.project-feature, .work-project-index, .career-journey, .contact-copy, .section-heading, .education { min-width: 0; position: relative; z-index: 13; }
+.project-feature { grid-area: feature; border-block: 1px solid var(--line); padding-block: clamp(24px, 3.6vw, 48px); }
+.project-feature h3 { font-size: clamp(29px, 3.1vw, 47px); line-height: 1.12; max-width: 22ch; }
+.project-feature-facts { display: flex; flex-wrap: wrap; gap: 16px 32px; margin: 22px 0 0; }
+.project-feature-facts dt { color: var(--muted); font-size: 12px; }
+.project-feature-facts dd { margin: 4px 0 0; color: var(--ink); font-size: 14px; font-weight: 600; font-variant-numeric: tabular-nums; }
+.project-feature-summary { max-width: 46ch; margin-top: 22px; font-size: clamp(17px, 1.45vw, 21px); line-height: 1.6; color: var(--reading-ink); }
+.work-project-index { grid-area: index; }
+.work-project-index > h3 { margin-bottom: 18px; font-size: clamp(21px, 2.05vw, 29px); }
+.work-index-entry { padding-block: 20px 23px; border-top: 1px solid var(--line); }
+.work-index-entry[data-expanded="true"] { border-color: color-mix(in srgb, var(--project-accent) 47%, transparent); }
+.work-index-date { color: var(--muted); font-size: 12px; font-variant-numeric: tabular-nums; }
+.work-index-entry h4 { margin: 4px 0 2px; font-family: Sora, sans-serif; font-size: clamp(17px, 1.65vw, 23px); line-height: 1.3; font-weight: 500; letter-spacing: -.025em; }
+.work-index-trigger { display: flex; align-items: center; justify-content: space-between; gap: 14px; width: 100%; min-height: 44px; padding: 0; text-align: left; }
+.project-disclosure { flex: 0 0 32px; width: 32px; height: 32px; display: grid; place-items: center; border: 1px solid var(--line); border-radius: 50%; color: var(--muted); transition: color 250ms, border-color 250ms; }
+.work-index-trigger:is(:hover, :focus-visible, [aria-expanded="true"]) .project-disclosure { color: var(--project-accent); border-color: var(--project-accent); }
+.work-index-role { color: var(--reading-ink); font-size: 13px; }
+.work-index-role span { display: inline-block; margin-left: 10px; color: var(--muted); }
+.work-index-summary, .work-index-details { max-width: 64ch; color: var(--reading-ink); font-size: 15px; line-height: 1.65; }
+.work-index-summary { margin-top: 8px; }
+.work-index-details { margin: 14px 0 0; padding: 0 0 0 18px; }
+.work-index-details li + li { margin-top: 6px; }
+.work-index-details:not([hidden]), .career-story [id^="career-details-"]:not([hidden]) { animation: chapter-copy 450ms var(--chapter-ease); }
+@keyframes chapter-copy { from { opacity: .1; translate: 0 7px; } to { opacity: 1; translate: 0; } }
+.experience .section-heading { align-items: flex-end; }
+.experience .section-heading h2 { font-size: clamp(32px, 3.6vw, 52px); }
+.experience-layout .career-journey { margin-top: 0; }
+.experience-layout .career-entry { display: block; padding: 0 0 42px 32px; }
+.experience-layout .career-date { padding: 0 0 10px; }
+.experience-layout .career-date time { font-size: 13px; max-width: none; font-variant-numeric: tabular-nums; }
+.experience-layout .journey-node { left: -32px; right: auto; top: 5px; width: 11px; height: 11px; }
+.experience-layout .journey-line { left: 5px; top: 10px; bottom: 48px; }
+.experience-layout .career-story { padding: 0; max-width: none; }
+.experience-layout .career-story h3 { font-size: clamp(23px, 2.1vw, 30px); margin: 10px 0 14px; }
+.experience-layout .career-story > p, .experience-layout .career-story [id^="career-details-"] p { color: var(--reading-ink); font-size: 16px; }
+.career-company { font-size: 13px; }
+.career-toggle { gap: 12px; color: var(--orb-violet); }
+.career-toggle:hover { color: var(--orb-cyan); }
+.education { margin-top: 32px; padding-top: 24px; font-size: 14px; }
+.contact { padding-block: clamp(88px, 10vw, 160px); }
+.contact::after { display: none; }
+.contact-composition { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr); align-items: center; gap: 40px; }
+.contact-copy h2 { font-size: clamp(42px, 5vw, 70px); line-height: 1.16; }
+.contact-copy > p { color: var(--reading-ink); max-width: 39ch; font-size: 16px; margin-top: 24px; }
+.contact-email { font-size: clamp(20px, 2.25vw, 32px); margin-top: 30px; color: #e3e9fc; border-bottom: 1px solid #86ddea77; padding-bottom: 8px; transition: color 250ms, border-color 250ms; }
+.contact-email:hover, .contact-email:focus-visible { color: var(--orb-cyan); border-color: var(--orb-cyan); }
+.contact-actions { flex-wrap: wrap; gap: 8px 26px; }
+.contact .chapter-art { position: relative; top: auto; }
+.chapter-art--contact .orb-trace--a { inset: 7%; transform: none; }
+.chapter-art--contact .orb-trace--b { inset: 0; transform: none; opacity: .3; }
+.contact-composition:has(.contact-email:hover) .orb-trace--a,
+.contact-composition:has(.contact-email:focus-visible) .orb-trace--a { border-color: #8bedff88; transform: scale(1.06); }
+.orb-trace { transition: transform 900ms var(--chapter-ease), border-color 600ms; }
+/* The shared CSS orb is the single fallback too, never a second sphere in the AI slot. */
+[data-renderer="fallback"] .speaking-orb-fallback { display: none; }
+.cinematic-scene.scene-fallback::after {
+  transform: translate(-50%, -50%) rotate(var(--fallback-flight-angle, 0rad))
+    scale(calc(1 + var(--fallback-lens, 0)*.1 + var(--fallback-flight, 0)*.56 + var(--avatar-squash, 0)*.39 - var(--avatar-wake, 0)*.08), calc(1 - var(--fallback-lens, 0)*.25 - var(--fallback-flight, 0)*.72 - var(--avatar-squash, 0)*.7 + var(--avatar-wake, 0)*.15));
+  mask-image: radial-gradient(closest-side, transparent calc(var(--fallback-loop, 0)*42%), #000 calc(var(--fallback-loop, 0)*42% + 1px));
+}
+@media (max-width: 1100px) and (min-width: 901px) {
+  .chapter-layout { grid-template-columns: minmax(0, .68fr) minmax(0, 1.32fr); gap: 32px; }
+}
+@media (max-width: 900px) {
+  .chapter-layout { grid-template-columns: minmax(0, 1fr); gap: 36px; }
+  .chapter-art { position: relative; top: auto; max-width: 440px; width: 100%; margin-inline: auto; }
+  .chapter-orb-slot { height: 300px; }
+  .orb-caption { font-size: 18px; }
+  .work-showcase { grid-template-columns: minmax(0, 1fr); grid-template-areas: "feature" "lens" "index"; gap: 26px; }
+  .work-showcase .chapter-orb-slot { height: clamp(170px, 33vw, 250px); }
+  .contact-composition { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+  .contact .chapter-art { grid-row: 1; max-width: 340px; }
+  .contact .chapter-orb-slot { height: 240px; }
+  .contact-copy { text-align: center; }
+  .contact-copy > p { margin-inline: auto; }
+  .contact-actions { justify-content: center; }
+  .experience .section-heading { display: block; }
+  .experience .section-heading > .text-link { margin-top: 14px; }
+}
+@media (max-width: 700px) {
+  .section.work, .section.experience, .section.contact { padding-inline: 7%; padding-block: 72px; }
+  .chapter-orb-slot { height: 250px; }
+  .chapter-art { max-width: 350px; }
+  .chapter-layout { gap: 32px; }
+  .work-index-role span { display: block; margin: 3px 0 0; }
+  .experience-layout .career-entry { padding-left: 28px; }
+  .experience-layout .journey-node { left: -28px; }
+  .experience .section-heading h2 { font-size: clamp(29px, 8vw, 36px); }
+  .education { display: block; line-height: 1.65; }
+  .education > span { display: block; }
+  .education > span:last-child { margin-top: 12px; }
+  .contact-copy h2 { font-size: clamp(40px, 11vw, 58px); }
+  .contact-email { font-size: clamp(19px, 5.5vw, 26px); }
+  .contact-actions { gap: 8px 20px; }
+}
+@media (max-height: 650px) and (min-width: 901px) {
+  .chapter-art { top: calc(var(--header-zone, 96px) + 12px); }
+  .chapter-orb-slot { height: 260px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .work-index-details, .project-lens-caption, .orb-trace { transition: none; animation: none; translate: none; }
+}

@@ -1,0 +1,117 @@
+/* Pearl surfaces keep the original luminous orb as the focal material. */
+html[data-theme="light"] {
+  color-scheme: light;
+  --ground: #f7f8fc;
+  --surface: #f0f3f9;
+  --ink: #18243c;
+  --muted: #52627b;
+  --reading-ink: #43536e;
+  --accent: #6350b8;
+  --line: #cad3e3;
+  --orb-cyan: #08778e;
+  --orb-violet: #7352b2;
+  --orb-pink: #ac367f;
+  color: var(--ink);
+  background: var(--ground);
+}
+:where(html[data-theme="light"]) body { background: var(--ground); color: var(--ink); }
+:where(html[data-theme="light"]) ::selection { color: #18243c; background: #d9d3fb; }
+:where(html[data-theme="light"]) ::-webkit-scrollbar-thumb { background: #a4afc4; }
+:where(html[data-theme="light"]) a:focus-visible, :where(html[data-theme="light"]) button:focus-visible, :where(html[data-theme="light"]) summary:focus-visible { outline-color: #6350b8; }
+:where(html[data-theme="light"]) .atmosphere { background: none; }
+:where(html[data-theme="light"]) .section, :where(html[data-theme="light"]) .section.intelligence, :where(html[data-theme="light"]) .section.work, :where(html[data-theme="light"]) .section.experience, :where(html[data-theme="light"]) .section.contact, :where(html[data-theme="light"]) footer {
+  background: var(--ground);
+}
+:where(html[data-theme="light"]) .section.intelligence, :where(html[data-theme="light"]) .section.experience { background-color: #f0f3f9; }
+:where(html[data-theme="light"]) .cinematic-hero.intro-complete { background: var(--ground); }
+:where(html[data-theme="light"]) .cinematic-hero::before {
+  background-color: var(--ground);
+  background-image: radial-gradient(ellipse at 72% 56%, #e3e9ff 0, #f2effb 35%, #f7f8fc 72%);
+  background-size: cover;
+}
+:where(html[data-theme="light"]) .header-identity span, :where(html[data-theme="light"]) .hero-identity, :where(html[data-theme="light"]) .hero-identity span, :where(html[data-theme="light"]) .hero-identity strong, :where(html[data-theme="light"]) .hero-methodologies, :where(html[data-theme="light"]) .hero-role, :where(html[data-theme="light"]) .hero-name { color: var(--ink); }
+:where(html[data-theme="light"]) .header-resume { background: #ffffffd9; color: var(--ink); border-color: var(--line); }
+:where(html[data-theme="light"]) .header-resume:is(:hover,:focus-visible) { color: #075d77; background: #e9f4f8; border-color: #6f9eac; }
+:where(html[data-theme="light"]) .hero-scroll-cue { color: var(--muted); background: #f7f8fcd9; }
+:where(html[data-theme="light"]) .hero-title .hero-sweep { color: var(--ink); }
+:where(html[data-theme="light"]) .perspective-stage p, :where(html[data-theme="light"]) .perspective-copy p, :where(html[data-theme="light"]) .team-caption { color: var(--reading-ink); }
+:where(html[data-theme="light"]) .text-link, :where(html[data-theme="light"]) .connection-actions button { color: #514497; }
+:where(html[data-theme="light"]) .text-link:hover { color: #075d77; }
+:where(html[data-theme="light"]) .team-system .team-badge { background: #ffffffeb; color: var(--reading-ink); border-color: var(--line); }
+:where(html[data-theme="light"]) .team-system .team-badge.active, :where(html[data-theme="light"]) .hero-links .primary {
+  color: var(--ink); background: #fff; box-shadow: 0 6px 20px #263c6414;
+}
+:where(html[data-theme="light"]) .team-system .team-badge.active > span:last-child {
+  color: var(--ink);
+  font-weight: 700;
+}
+:where(html[data-theme="light"]) .hero-links .primary:hover { background: #edf3ff; }
+:where(html[data-theme="light"]) .team-system .team-badge.active::before, :where(html[data-theme="light"]) .hero-links .primary::before { filter: drop-shadow(0 0 3px #5e95e34d); }
+:where(html[data-theme="light"]) .tour-dots button, :where(html[data-theme="light"]) .tour-control { color: #514497; }
+:where(html[data-theme="light"]) .tour-dots button span { background: #9ba8bd; }
+:where(html[data-theme="light"]) .tour-dots button[aria-current] span { background: #08778e; }
+:where(html[data-theme="light"]) .section-rail em, :where(html[data-theme="light"]) .section-rail a[aria-current] em { background: none; color: var(--muted); }
+:where(html[data-theme="light"]) .section-rail a[aria-current] em { color: #514497; font-weight: 600; }
+:where(html[data-theme="light"]) .section-rail a > span { background: #8593ac; }
+:where(html[data-theme="light"]) .section-rail a[aria-current] > span { background: #7352b2; box-shadow: 0 0 10px #9572dc55; }
+:where(html[data-theme="light"]) .ai-workspace { --workflow-surface: #ffffffdb; --workflow-border: #c8d2e3; }
+:where(html[data-theme="light"]) .ai-workspace .workflow-tabs button[aria-selected="true"] { color: #075d77; }
+:where(html[data-theme="light"]) .workflow-step, :where(html[data-theme="light"]) .workflow-proof { background: #ffffffcf; }
+:where(html[data-theme="light"]) .workflow-timer { background: linear-gradient(90deg,#087f99,#7951c1,#ba3e91,#087f99); background-size: 200% 100%; box-shadow: 0 0 7px #357dbe50; }
+:where(html[data-theme="light"]) .workflow-view { --flow-ink: #08778e; }
+:where(html[data-theme="light"]) .workflow-view[data-workflow="1"] { --flow-ink: #7352b2; }
+:where(html[data-theme="light"]) .workflow-view[data-workflow="2"] { --flow-ink: #ac367f; }
+:where(html[data-theme="light"]) .workflow-view[data-workflow="3"] { --flow-ink: #3567b4; }
+:where(html[data-theme="light"]) .workflow-view[data-workflow="4"] { --flow-ink: #24745c; }
+:where(html[data-theme="light"]) .workflow-art .art-platform { fill: #dae3f1; }
+:where(html[data-theme="light"]) .workflow-art .art-depth { fill: #e5eaf4; stroke: #7a8da9; }
+:where(html[data-theme="light"]) .workflow-art .art-shell { fill: color-mix(in srgb,currentColor 8%,white); stroke: #7589a5; }
+:where(html[data-theme="light"]) .workflow-art .art-line { stroke: #657b9b; }
+@keyframes light-workflow-card-signal {
+  0%,26%,100% { border-color: var(--workflow-border); background-color: #ffffffcf; }
+  10% { border-color: color-mix(in srgb,var(--flow-ink) 60%,var(--workflow-border)); background-color: color-mix(in srgb,var(--flow-ink) 7%,white); }
+}
+:where(html[data-theme="light"]) .ai-heading-emphasis {
+  background-image: linear-gradient(110deg,#08798c,#3b62ba 22%,#7851af 43%,#a23883 67%,#08798c);
+  text-shadow: none;
+  filter: drop-shadow(0 0 9px #8261bf23);
+}
+:where(html[data-theme="light"]) .orb-caption, :where(html[data-theme="light"]) .contact-email { color: var(--ink); }
+:where(html[data-theme="light"]) .project-lens-caption p { color: #24745c; }
+:where(html[data-theme="light"]) .work-showcase { --project-accent: #08778e; }
+:where(html[data-theme="light"]) .work-showcase[data-project="hris"] { --project-accent: #24745c; }
+:where(html[data-theme="light"]) .work-showcase[data-project="streaming"] { --project-accent: #ac367f; }
+:where(html[data-theme="light"]) .work-showcase[data-project="operations"] { --project-accent: #7352b2; }
+:where(html[data-theme="light"]) .career-date time, :where(html[data-theme="light"]) .career-entry.current .career-date time, :where(html[data-theme="light"]) .career-company { color: var(--muted); }
+:where(html[data-theme="light"]) .career-focus { color: #6350a2 !important; }
+:where(html[data-theme="light"]) .career-story ul { color: var(--reading-ink); }
+:where(html[data-theme="light"]) .journey-node { background: #edf0f8; border-color: #9a91c2; }
+:where(html[data-theme="light"]) .career-entry.current .journey-node { background: #7352b2; box-shadow: 0 0 0 7px #7352b210; }
+:where(html[data-theme="light"]) .journey-line { background: var(--line); }
+:where(html[data-theme="light"]) .education, :where(html[data-theme="light"]) footer { color: var(--muted); }
+:where(html[data-theme="light"]) .education strong { color: var(--ink); }
+:where(html[data-theme="light"]) .journey-line > span {
+  background:linear-gradient(#08778e,#7352b2,#ac367f);
+  box-shadow:0 0 12px #7352b22b;
+}
+:where(html[data-theme="light"]) .orb-trace { border-color:#8798b34d; }
+:where(html[data-theme="light"]) .guide, :where(html[data-theme="light"]) .motion-control { color: var(--ink); background: #fffffff2; border-color: var(--line); }
+:where(html[data-theme="light"]) .guide-copy > span, :where(html[data-theme="light"]) .guide-copy > p { color: var(--reading-ink); }
+:where(html[data-theme="light"]) .skip { color: white; background: #6350b8; }
+@media (max-width:700px) {
+  :where(html[data-theme="light"]) .section-rail { background: #f7f8fcf5; border-color: var(--line); }
+  :where(html[data-theme="light"]) .section-rail a[aria-current] em { color: #514497; }
+}
+
+@media (prefers-reduced-motion:no-preference) and (forced-colors:none) {
+  :where(html[data-theme="light"]) .cinematic-hero.sweep-ready .hero-sweep-word { background-image: linear-gradient(90deg,#18243c 35%,var(--sweep-tint) 46% 54%,#18243c 65%); }
+}
+:where(html[data-theme="light"]) .hero-title .hero-sweep { background: none; -webkit-text-fill-color: var(--ink); }
+:where(html[data-theme="light"]) .cinematic-hero.sweep-ready .hero-sweep-word { -webkit-text-fill-color: transparent; }
+@media (prefers-reduced-motion:reduce), (forced-colors:active) {
+  :where(html[data-theme="light"]) .cinematic-hero.sweep-ready .hero-sweep-word { -webkit-text-fill-color: currentColor; }
+}
+
+:where(html[data-theme="light"]) body { overflow-x: clip; }
+
+:where(html[data-theme="light"]) .workflow-view[data-active="true"] .workflow-step { animation-name: light-workflow-card-signal; }
