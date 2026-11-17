@@ -6,3 +6,7 @@ dist/
 # Local design and QA artifacts
 /output/
 /.impeccable/questions/
+
+# Local tooling
+.claude/
+.taste-skill/

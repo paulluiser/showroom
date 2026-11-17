@@ -1,0 +1,525 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Paul Luiser Vasquez — IT Project Manager</title>
+<meta name="description" content="Paul Luiser Vasquez is an IT Project Manager in Metro Manila leading Agile and Waterfall software delivery, from requirements to post-deployment support.">
+<meta name="theme-color" content="#f4f1ea" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14130f" media="(prefers-color-scheme: dark)">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    color-scheme: light dark;
+    --bg: #f4f1ea;
+    --surface: #ebe6db;
+    --ink: #1b1a17;
+    --muted: #5d5a52;
+    --line: #d4cdbf;
+    --accent: #c2410c;
+    --accent-ink: #9a3412;
+    --bar: #1b1a17;
+    --bar-soft: #b9b1a1;
+    --serif: "Fraunces", Georgia, serif;
+    --sans: "IBM Plex Sans", system-ui, -apple-system, sans-serif;
+    --mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+    --gutter: clamp(16px, 5vw, 64px);
+    --max: 1120px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14130f;
+      --surface: #1d1c17;
+      --ink: #ece7dc;
+      --muted: #a39e92;
+      --line: #34322b;
+      --accent: #fb923c;
+      --accent-ink: #fdba74;
+      --bar: #ece7dc;
+      --bar-soft: #4b483f;
+    }
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+  @media (pointer: fine) { html { overscroll-behavior: none; } }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font: 400 17px/1.6 var(--sans);
+    -webkit-font-smoothing: antialiased;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    overflow-x: hidden;
+  }
+  a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+  a:hover { color: var(--accent-ink); }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+  h1, h2, h3 { text-wrap: balance; margin: 0; font-weight: 500; }
+  p, li { text-wrap: pretty; overflow-wrap: break-word; }
+  ul { margin: 0; padding: 0; list-style: none; }
+
+  .skip {
+    position: absolute; left: 16px; top: -100px; z-index: 10;
+    background: var(--ink); color: var(--bg); padding: 10px 14px; text-decoration: none;
+  }
+  .skip:focus-visible { top: 16px; }
+
+  .wrap { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); }
+
+  /* Header */
+  .top {
+    position: sticky; top: 0; z-index: 5;
+    background: color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter: saturate(1.4) blur(10px);
+    -webkit-backdrop-filter: saturate(1.4) blur(10px);
+    border-bottom: 1px solid var(--line);
+  }
+  .top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 60px; }
+  .mark { font: 500 14px/1 var(--mono); letter-spacing: .04em; text-decoration: none; }
+  .nav { display: flex; gap: clamp(14px, 3vw, 28px); font-size: 14px; }
+  .nav a { text-decoration: none; color: var(--muted); transition: color .15s ease; }
+  .nav a:hover { color: var(--ink); }
+  @media (max-width: 640px) { .nav a:not(.nav-cta) { display: none; } }
+  .nav-cta { color: var(--ink) !important; text-decoration: underline !important; }
+
+  section { scroll-margin-top: 76px; }
+  [id] { scroll-margin-top: 76px; }
+
+  /* Hero */
+  .hero { padding: clamp(56px, 10vw, 120px) 0 clamp(48px, 7vw, 80px); }
+  .eyebrow { font: 500 13px/1.4 var(--mono); letter-spacing: .06em; text-transform: uppercase; color: var(--muted); margin: 0 0 24px; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+  .dot { width: 8px; height: 8px; border-radius: 50%; background: #16a34a; box-shadow: 0 0 0 4px color-mix(in srgb, #16a34a 20%, transparent); }
+  .hero h1 {
+    font-family: var(--serif);
+    font-size: clamp(44px, 8.4vw, 104px);
+    line-height: 1;
+    letter-spacing: -.01em;
+    font-variation-settings: "opsz" 144;
+    max-width: 14ch;
+  }
+  .hero h1 em { font-style: italic; color: var(--accent); }
+  .lede { font-size: clamp(18px, 2vw, 21px); line-height: 1.55; max-width: 60ch; color: var(--muted); margin: 32px 0 40px; }
+  .lede strong { color: var(--ink); font-weight: 500; }
+  .actions { display: flex; flex-wrap: wrap; gap: 12px; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 13px 20px; min-height: 48px;
+    font: 500 15px/1 var(--sans); text-decoration: none;
+    border: 1px solid var(--ink); border-radius: 999px;
+    transition: background-color .15s ease, color .15s ease, transform .15s ease;
+  }
+  .btn-primary { background: var(--ink); color: var(--bg); }
+  .btn-primary:hover { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .btn-ghost:hover { background: var(--ink); color: var(--bg); }
+  .btn:active { transform: scale(.97); }
+  .btn svg { width: 16px; height: 16px; }
+
+  /* Stats */
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .stats { margin: 0; }
+  .stat dd { margin: 0; }
+  .stat { padding: 28px 24px 28px 0; min-width: 0; }
+  .stat + .stat { padding-left: 24px; border-left: 1px solid var(--line); }
+  .stat b { display: block; font: 500 clamp(32px, 4vw, 44px)/1 var(--serif); font-variant-numeric: tabular-nums; letter-spacing: -.02em; }
+  .stat span { display: block; margin-top: 10px; font-size: 14px; color: var(--muted); line-height: 1.4; }
+  @media (max-width: 760px) {
+    .stats { grid-template-columns: 1fr 1fr; }
+    .stat:nth-child(3) { padding-left: 0; border-left: 0; }
+    .stat:nth-child(n+3) { border-top: 1px solid var(--line); }
+  }
+
+  /* Section heads */
+  .block { padding: clamp(72px, 10vw, 128px) 0 0; }
+  .head { display: grid; grid-template-columns: 200px 1fr; gap: 24px; margin-bottom: 48px; align-items: baseline; }
+  .num { font: 500 13px/1 var(--mono); letter-spacing: .06em; color: var(--accent-ink); text-transform: uppercase; }
+  .head h2 { font: 500 clamp(30px, 4.2vw, 48px)/1.08 var(--serif); letter-spacing: -.02em; max-width: 22ch; }
+  @media (max-width: 760px) { .head { grid-template-columns: 1fr; gap: 12px; } }
+
+  /* Timeline (Gantt) */
+  .gantt { border: 1px solid var(--line); border-radius: 14px; padding: 28px clamp(16px, 3vw, 32px) 20px; background: var(--surface); }
+  .g-axis, .g-row { position: relative; display: grid; grid-template-columns: minmax(120px, 230px) 1fr; gap: 20px; align-items: center; }
+  .g-axis { font: 400 12px/1 var(--mono); color: var(--muted); padding-bottom: 12px; border-bottom: 1px solid var(--line); margin-bottom: 8px; }
+  .g-years { position: relative; display: grid; grid-template-columns: repeat(6, 1fr); font-variant-numeric: tabular-nums; }
+  .g-years span { padding-left: 6px; border-left: 1px solid var(--line); }
+  .g-row { padding: 9px 0; }
+  .g-label { font-size: 14px; line-height: 1.3; min-width: 0; }
+  .g-label small { display: block; color: var(--muted); font: 400 12px/1.4 var(--mono); margin-top: 2px; }
+  .g-track {
+    position: relative; height: 14px;
+    background-image: linear-gradient(to right, var(--line) 1px, transparent 1px);
+    background-size: calc(100% / 6) 100%;
+  }
+  .g-bar {
+    position: absolute; top: 0; bottom: 0; border-radius: 3px;
+    left: calc(var(--s) / 72 * 100%);
+    width: max(6px, calc((var(--e) - var(--s)) / 72 * 100%));
+    background: var(--bar);
+    transform-origin: left center;
+  }
+  .g-bar.soft { background: var(--bar-soft); }
+  .g-bar.accent { background: var(--accent); }
+  .g-group { font: 500 11px/1 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); padding: 18px 0 6px; }
+  .g-now { position: absolute; top: -6px; bottom: -6px; left: calc(70.5 / 72 * 100%); width: 0; border-left: 1.5px dashed var(--accent); }
+  .g-tracks-wrap { position: relative; }
+  .g-legend { display: flex; flex-wrap: wrap; gap: 18px; margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--line); font-size: 13px; color: var(--muted); }
+  .g-legend i { display: inline-block; width: 14px; height: 8px; border-radius: 2px; margin-right: 8px; vertical-align: middle; }
+  @media (max-width: 640px) {
+    .g-axis, .g-row { grid-template-columns: 1fr; gap: 8px; }
+    .g-axis > span:first-child { display: none; }
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .gantt.in .g-bar { animation: grow .9s cubic-bezier(.2, .8, .2, 1) both; animation-delay: calc(var(--i, 0) * 70ms); }
+    @keyframes grow { from { transform: scaleX(0); opacity: 0; } to { transform: scaleX(1); opacity: 1; } }
+  }
+
+  /* Experience */
+  .roles { border-top: 1px solid var(--line); }
+  .role { display: grid; grid-template-columns: 200px 1fr; gap: 24px; padding: 36px 0; border-bottom: 1px solid var(--line); }
+  .when { font: 400 13px/1.5 var(--mono); color: var(--muted); font-variant-numeric: tabular-nums; }
+  .when .tag { display: inline-block; margin-top: 8px; padding: 3px 8px; border-radius: 999px; background: color-mix(in srgb, var(--accent) 14%, transparent); color: var(--accent-ink); font-size: 11px; letter-spacing: .04em; text-transform: uppercase; }
+  .role h3 { font: 500 clamp(22px, 2.4vw, 28px)/1.2 var(--serif); letter-spacing: -.01em; }
+  .org { margin: 6px 0 18px; color: var(--muted); font-size: 15px; }
+  .bullets li { position: relative; padding-left: 22px; margin-top: 8px; max-width: 70ch; }
+  .bullets li::before { content: ""; position: absolute; left: 0; top: .78em; width: 10px; height: 1px; background: var(--accent); }
+  @media (max-width: 760px) { .role { grid-template-columns: 1fr; gap: 10px; } }
+
+  /* Projects */
+  .projects { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .card {
+    display: flex; flex-direction: column; min-width: 0;
+    border: 1px solid var(--line); border-radius: 14px; padding: 28px;
+    background: var(--surface);
+  }
+  .card.feature { grid-column: span 3; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; padding: clamp(28px, 4vw, 48px); background: var(--ink); color: var(--bg); border-color: var(--ink); }
+  .card.feature .when, .card.feature .org { color: color-mix(in srgb, var(--bg) 65%, transparent); }
+  .card.feature .bullets li::before { background: var(--accent); }
+  .card h3 { font: 500 clamp(22px, 2.4vw, 30px)/1.15 var(--serif); letter-spacing: -.01em; margin-top: 12px; }
+  .card .org { margin-bottom: 20px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: auto; padding-top: 20px; }
+  .chip { font: 400 12px/1 var(--mono); padding: 7px 10px; border: 1px solid var(--line); border-radius: 999px; color: var(--muted); }
+  .card.feature .chip { border-color: color-mix(in srgb, var(--bg) 25%, transparent); color: color-mix(in srgb, var(--bg) 75%, transparent); }
+  .projects .card:not(.feature) { grid-column: span 3; }
+  @media (min-width: 900px) { .projects .card:not(.feature) { grid-column: span 1; } .projects { grid-template-columns: 1fr 1fr; } .card.feature { grid-column: span 2; } }
+  @media (max-width: 760px) { .card.feature { grid-template-columns: 1fr; gap: 8px; } }
+
+  /* Competencies */
+  .skills { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; }
+  .skill { background: var(--bg); padding: 28px; min-width: 0; }
+  .skill h3 { font: 500 13px/1 var(--mono); letter-spacing: .06em; text-transform: uppercase; color: var(--accent-ink); margin-bottom: 16px; }
+  .skill p { margin: 0; color: var(--muted); font-size: 15px; }
+  .tools { display: flex; flex-wrap: wrap; gap: 8px; }
+  .tools li { font-size: 14px; padding: 6px 12px; border-radius: 8px; background: var(--surface); border: 1px solid var(--line); }
+
+  /* Education + awards */
+  .split { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  @media (max-width: 860px) { .split { grid-template-columns: 1fr; } }
+  .edu { border: 1px solid var(--line); border-radius: 14px; padding: clamp(28px, 4vw, 40px); }
+  .edu h3 { font: 500 clamp(24px, 2.8vw, 32px)/1.15 var(--serif); margin: 12px 0 6px; }
+  .gwa { display: flex; align-items: baseline; gap: 14px; margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--line); }
+  .gwa b { font: 500 56px/1 var(--serif); color: var(--accent); font-variant-numeric: tabular-nums; letter-spacing: -.02em; }
+  .gwa span { color: var(--muted); font-size: 14px; line-height: 1.4; }
+  .awards li { display: grid; grid-template-columns: 1fr auto; gap: 4px 20px; padding: 18px 0; border-bottom: 1px solid var(--line); }
+  .awards li:first-child { border-top: 1px solid var(--line); }
+  .awards strong { font-weight: 500; }
+  .awards .when { white-space: nowrap; }
+  .awards p { grid-column: 1 / -1; margin: 0; color: var(--muted); font-size: 14px; }
+  @media (max-width: 480px) { .awards li { grid-template-columns: 1fr; } }
+
+  /* Contact */
+  .contact { margin-top: clamp(80px, 12vw, 144px); padding: clamp(56px, 9vw, 112px) 0; background: var(--ink); color: var(--bg); }
+  .contact .num { color: var(--accent); }
+  .contact h2 { font: 500 clamp(40px, 7vw, 88px)/1 var(--serif); letter-spacing: -.025em; margin: 20px 0 32px; max-width: 14ch; }
+  .contact h2 em { color: var(--accent); }
+  .mail { font: 400 clamp(18px, 2.6vw, 28px)/1.3 var(--mono); color: var(--bg); text-decoration: underline; text-decoration-color: var(--accent); text-underline-offset: 6px; overflow-wrap: anywhere; }
+  .mail:hover { color: var(--accent); }
+  .foot { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; margin-top: 64px; padding-top: 24px; border-top: 1px solid color-mix(in srgb, var(--bg) 20%, transparent); font-size: 13px; color: color-mix(in srgb, var(--bg) 60%, transparent); }
+
+  /* Reveal */
+  @media (prefers-reduced-motion: no-preference) {
+    .js .reveal { opacity: 0; transform: translateY(16px); transition: opacity .7s ease, transform .7s cubic-bezier(.2, .8, .2, 1); }
+    .js .reveal.in { opacity: 1; transform: none; }
+  }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style>
+<script>document.documentElement.classList.add("js")</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to Content</a>
+
+<header class="top">
+  <div class="wrap">
+    <a class="mark" href="#top" aria-label="Paul Luiser Vasquez, back to top">PLV&nbsp;/&nbsp;PM</a>
+    <nav class="nav" aria-label="Primary">
+      <a href="#timeline">Timeline</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a class="nav-cta" href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero" id="top" aria-labelledby="hero-title">
+    <div class="wrap">
+      <p class="eyebrow"><span class="dot" aria-hidden="true"></span>IT Project Manager · Metro Manila, Philippines</p>
+      <h1 id="hero-title">Paul Luiser Vasquez ships software <em>on&nbsp;plan.</em></h1>
+      <p class="lede">I lead cross-functional software teams through <strong>Agile/Scrum, Waterfall, and hybrid</strong> delivery — from requirements discovery and signed BRDs to UAT, deployment, and post-launch support. I use generative and agentic AI to move faster without losing rigor.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="mailto:paulluiser@gmail.com">
+          Email Me
+          <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a class="btn btn-ghost" href="#projects">View Projects</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <dl class="stats reveal" aria-label="At a glance">
+      <div class="stat"><dt><b>1.21</b></dt><dd><span>GWA, BS Computer Science — Magna Cum Laude</span></dd></div>
+      <div class="stat"><dt><b>3</b></dt><dd><span>Systems led from requirements to delivery</span></dd></div>
+      <div class="stat"><dt><b>4</b></dt><dd><span>Awards &amp; recognitions since 2023</span></dd></div>
+      <div class="stat"><dt><b>4+</b></dt><dd><span>Years facilitating delivery &amp; research</span></dd></div>
+    </dl>
+  </div>
+
+  <section class="block" id="timeline" aria-labelledby="timeline-title">
+    <div class="wrap">
+      <div class="head">
+        <span class="num">01 — Timeline</span>
+        <h2 id="timeline-title">Five years, read like a project plan.</h2>
+      </div>
+
+      <figure class="gantt reveal" style="margin:0" aria-labelledby="timeline-title">
+        <div class="g-axis" aria-hidden="true">
+          <span>Workstream</span>
+          <div class="g-years"><span>2021</span><span>2022</span><span>2023</span><span>2024</span><span>2025</span><span>2026</span></div>
+        </div>
+
+        <div class="g-group">Roles</div>
+        <div class="g-row"><div class="g-label">IT Project Manager<small translate="no">Intellismart · Dec 2025 – Now</small></div><div class="g-track"><span class="g-bar accent" style="--s:59;--e:71;--i:0"></span><span class="g-now" aria-hidden="true"></span></div></div>
+        <div class="g-row"><div class="g-label">Associate, IT Project Manager<small translate="no">Go8 · Jun – Oct 2025</small></div><div class="g-track"><span class="g-bar" style="--s:53;--e:58;--i:1"></span></div></div>
+        <div class="g-row"><div class="g-label">Junior PM Intern<small translate="no">Go8 · Feb – May 2025</small></div><div class="g-track"><span class="g-bar" style="--s:49;--e:53;--i:2"></span></div></div>
+        <div class="g-row"><div class="g-label">Research Consultant<small>Freelance · Jan 2022 – May 2025</small></div><div class="g-track"><span class="g-bar soft" style="--s:12;--e:53;--i:3"></span></div></div>
+        <div class="g-row"><div class="g-label">BS Computer Science<small>STI College Caloocan · 2021 – 2025</small></div><div class="g-track"><span class="g-bar soft" style="--s:8;--e:55;--i:4"></span></div></div>
+
+        <div class="g-group">Projects</div>
+        <div class="g-row"><div class="g-label">Inventory-Accounting System<small>Jan – Jul 2026</small></div><div class="g-track"><span class="g-bar accent" style="--s:60;--e:67;--i:5"></span></div></div>
+        <div class="g-row"><div class="g-label">Streaming Platform Overhaul<small>Aug – Oct 2025</small></div><div class="g-track"><span class="g-bar" style="--s:55;--e:58;--i:6"></span></div></div>
+        <div class="g-row"><div class="g-label">Management Site &amp; Tour App<small>Jul – Aug 2025</small></div><div class="g-track"><span class="g-bar" style="--s:54;--e:56;--i:7"></span></div></div>
+
+        <figcaption class="g-legend">
+          <span><i style="background:var(--accent)" aria-hidden="true"></i>Current employer</span>
+          <span><i style="background:var(--bar)" aria-hidden="true"></i>Project management</span>
+          <span><i style="background:var(--bar-soft)" aria-hidden="true"></i>Research &amp; education</span>
+          <span><i style="border-left:1.5px dashed var(--accent);width:1px;border-radius:0;height:12px" aria-hidden="true"></i>Today</span>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="block" id="experience" aria-labelledby="exp-title">
+    <div class="wrap">
+      <div class="head">
+        <span class="num">02 — Experience</span>
+        <h2 id="exp-title">From intern to running the delivery practice.</h2>
+      </div>
+
+      <div class="roles">
+        <article class="role reveal">
+          <div class="when">Dec 2025 – Present<br><span class="tag">Current</span></div>
+          <div>
+            <h3>IT Project Manager</h3>
+            <p class="org"><span translate="no">Intellismart Technology Inc.</span> · Quezon City</p>
+            <ul class="bullets">
+              <li>Spearheaded the rollout of Agile-Scrum across all active projects while running multiple concurrent engagements.</li>
+              <li>Authored the officially signed BRD and SRS used across the entire software development cycle.</li>
+              <li>Integrated generative and agentic AI into PM workflows to speed up requirements analysis, documentation, research, and prototyping.</li>
+              <li>Leads cross-functional teams to goals within allocated resources and organizational standards, tracking milestones in <span translate="no">Jira</span>.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="role reveal">
+          <div class="when">Jun 2025 – Oct 2025</div>
+          <div>
+            <h3>Associate, IT Project Manager</h3>
+            <p class="org"><span translate="no">Go8 Technology Inc.</span> · Parañaque City</p>
+            <ul class="bullets">
+              <li>Oversaw project lifecycles from requirements gathering to post-deployment support, making data-driven calls for the team.</li>
+              <li>Used <span translate="no">Google Analytics</span> to initiate and facilitate internal change requests.</li>
+              <li>Managed stakeholder relationships with data-driven reports, updates, and proposals.</li>
+              <li>Improved internal process with <span translate="no">Trello</span> and diagnosed technical bottlenecks through timely stand-ups.</li>
+              <li>Leveraged generative AI and agentic workflows to streamline repetitive PM processes.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="role reveal">
+          <div class="when">Feb 2025 – May 2025</div>
+          <div>
+            <h3>Junior Project Management Intern</h3>
+            <p class="org"><span translate="no">Go8 Technology Inc.</span> · Ortigas Center, Pasig</p>
+            <ul class="bullets">
+              <li>Initiated system requirements gathering and analysis.</li>
+              <li>Managed project documentation, resource allocation, and risk logs.</li>
+              <li>Kept development aligned with the target timeline and issued data-driven directives to lift team productivity.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="role reveal">
+          <div class="when">Jan 2022 – May 2025</div>
+          <div>
+            <h3>Research Consultant</h3>
+            <p class="org">Freelance · Remote</p>
+            <ul class="bullets">
+              <li>Analyzed data sets to reach sound conclusions and turn them into action plans.</li>
+              <li>Facilitated strategic meetings on resources, timelines, and milestones.</li>
+              <li>Ran upskilling sessions for clients and proposed new methodologies to improve research processes.</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="projects" aria-labelledby="proj-title">
+    <div class="wrap">
+      <div class="head">
+        <span class="num">03 — Selected Projects</span>
+        <h2 id="proj-title">Systems taken from discovery to sign-off.</h2>
+      </div>
+
+      <div class="projects">
+        <article class="card feature reveal">
+          <div>
+            <p class="when" style="margin:0">Jan 2026 – Jul 2026 · Featured</p>
+            <h3>Enterprise Inventory-Accounting Management System</h3>
+            <p class="org"><span translate="no">Intellismart Technology Inc.</span></p>
+            <div class="chips"><span class="chip">BRD</span><span class="chip">SRS</span><span class="chip">AI-assisted RE</span><span class="chip">Change control</span></div>
+          </div>
+          <ul class="bullets">
+            <li>Led data-gathering sessions to capture client requirements, pain points, and the current state.</li>
+            <li>Authored and published the end-to-end signed BRD and SRS for the whole system.</li>
+            <li>Applied AI-assisted requirements engineering to find gaps, structure specifications, and accelerate documentation.</li>
+            <li>Ran the change request management process.</li>
+          </ul>
+        </article>
+
+        <article class="card reveal">
+          <p class="when" style="margin:0">Aug 2025 – Oct 2025</p>
+          <h3>Subscription-Based Media Streaming Platform</h3>
+          <p class="org"><span translate="no">Go8 Technology Inc.</span></p>
+          <ul class="bullets">
+            <li>Spearheaded an end-to-end system overhaul across cross-functional teams, delivered on time.</li>
+            <li>Ran client walkthroughs and UAT sessions to validate functionality.</li>
+            <li>Reviewed features against defined requirements.</li>
+          </ul>
+          <div class="chips"><span class="chip">System overhaul</span><span class="chip">UAT</span></div>
+        </article>
+
+        <article class="card reveal">
+          <p class="when" style="margin:0">Jul 2025 – Aug 2025</p>
+          <h3>Internal Management Website &amp; Tour Tracking App</h3>
+          <p class="org"><span translate="no">Go8 Technology Inc.</span></p>
+          <ul class="bullets">
+            <li>Led requirements gathering, client communication, and business analysis.</li>
+            <li>Drove the SDLC through to a high-fidelity prototype.</li>
+          </ul>
+          <div class="chips"><span class="chip">Business analysis</span><span class="chip">Prototype</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="skills" aria-labelledby="skills-title">
+    <div class="wrap">
+      <div class="head">
+        <span class="num">04 — Competencies</span>
+        <h2 id="skills-title">The toolkit behind the delivery.</h2>
+      </div>
+
+      <div class="skills reveal">
+        <div class="skill">
+          <h3>Project Delivery</h3>
+          <p>Agile/Scrum, Waterfall &amp; hybrid delivery. Sprint and backlog management, Agile ceremonies, phase-based planning, requirements &amp; change control, QA/UAT coordination, deployment, post-deployment support.</p>
+        </div>
+        <div class="skill">
+          <h3>Documentation</h3>
+          <p>Business requirements documents (BRD), system requirements specifications (SRS), business rules, process workflows, status reports, risk logs.</p>
+        </div>
+        <div class="skill">
+          <h3>AI &amp; Automation</h3>
+          <p>Generative and agentic AI for requirements analysis, documentation, workflow automation, rapid prototyping, research, and PM decision support.</p>
+        </div>
+        <div class="skill">
+          <h3>Technical Knowledge</h3>
+          <p>SDLC, business analysis, and fundamentals of programming, databases, infrastructure, and cybersecurity.</p>
+        </div>
+        <div class="skill">
+          <h3>Tools</h3>
+          <ul class="tools" translate="no">
+            <li>Jira</li><li>Trello</li><li>Figma</li><li>Excel</li><li>Google Sheets</li><li>Google Analytics</li><li>Google Workspace</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="education" aria-labelledby="edu-title">
+    <div class="wrap">
+      <div class="head">
+        <span class="num">05 — Education &amp; Awards</span>
+        <h2 id="edu-title">Recognized before graduation.</h2>
+      </div>
+
+      <div class="split">
+        <div class="edu reveal">
+          <p class="when" style="margin:0">Sep 2021 – Jul 2025</p>
+          <h3>BS Computer Science</h3>
+          <p class="org" style="margin:0">STI College Caloocan</p>
+          <p style="color:var(--muted);font-size:15px;margin:16px 0 0">Represented the branch in city, regional, and national competitions.</p>
+          <div class="gwa"><b>1.21</b><span>General weighted average<br>Magna Cum Laude</span></div>
+        </div>
+
+        <ul class="awards reveal" aria-label="Awards">
+          <li><strong>Magna Cum Laude</strong><span class="when">Jul 2025</span><p>STI College Caloocan</p></li>
+          <li><strong>Thesis Awardee — Web Development &amp; Content Creation</strong><span class="when">Dec 2024</span><p>2024 ICTE Symposium and Colloquium</p></li>
+          <li><strong>Code Green Representative</strong><span class="when">Apr 2024</span><p>STI College Caloocan</p></li>
+          <li><strong>4th Runner-Up, National Level</strong><span class="when">May 2023</span><p>Think Quest — Tagisan ng Talino</p></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact" aria-labelledby="contact-title">
+    <div class="wrap">
+      <span class="num">06 — Contact</span>
+      <h2 id="contact-title">Have a project that needs a <em>plan?</em></h2>
+      <a class="mail" href="mailto:paulluiser@gmail.com">paulluiser@gmail.com</a>
+      <div class="foot">
+        <span>Malabon City, Metro Manila, Philippines</span>
+        <span>Character references available on request</span>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script>
+  (() => {
+    const els = document.querySelectorAll(".reveal, .gantt");
+    if (!("IntersectionObserver" in window)) { els.forEach(e => e.classList.add("in")); return; }
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); } });
+    }, { rootMargin: "0px 0px -10% 0px", threshold: 0.1 });
+    els.forEach(e => io.observe(e));
+  })();
+</script>
+</body>
+</html>
